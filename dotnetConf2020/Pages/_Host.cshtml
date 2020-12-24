@@ -1,0 +1,156 @@
+﻿@page "/"
+@namespace dotnetConf2020.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>.NET Conf 2020 Taiwan</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=".NET Conf 這一年一次的世界級盛會台灣不會缺席！由台灣 Microsoft、STUDY4 和 Build School 共同組織的台灣 .NET Conf 開發人員活動，快來慶祝並了解新版本帶來的優秀開發體驗吧！">
+    <meta name="author" content="STUDY4" />
+    <meta name="keywords" content=":.NET, ASP.NET, .NET Conf, .NET Core, dotnet, microsoft, study4, buildschool, C#, F#, Visual Studio, Xamarin, Roslyn, F#, Mobile Development, .NET conference, .NET community, ASP.NET developer">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dotnetconf2020.study4.tw/img/banner/banner-site-preview.png">
+    <meta property="og:url" content="https://dotnetconf2020.study4.tw/">
+    <meta property="og:title" content=".NET Conf 2020 Taiwan">
+    <meta property="og:description" content=".NET Conf 這一年一次的世界級盛會台灣不會缺席！由台灣 Microsoft、STUDY4 和 Build School 共同組織的台灣 .NET Conf 開發人員活動，快來慶祝並了解新版本帶來的優秀開發體驗吧！">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://dotnetconf2020.study4.tw/img/banner/banner-site-preview.png">
+    <meta property="twitter:url" content="https://dotnetconf2020.study4.tw/">
+    <meta property="twitter:title" content=".NET Conf 2020 Taipei">
+    <meta property="og:description" content=".NET Conf 這一年一次的世界級盛會台灣不會缺席！由台灣 Microsoft、STUDY4 和 Build School 共同組織的台灣 .NET Conf 開發人員活動，快來慶祝並了解新版本帶來的優秀開發體驗吧！">
+
+    <base href="~/" />
+
+    <link type="image/png" rel="shortcut icon" href="/img/favicon.png" />
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap">
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style-custom.css" type="text/css">
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="dotnetConf2020.styles.css">
+
+    <environment include="Staging,Production">
+        <!-- Microsoft Clarity Analytics -->
+        <script type="text/javascript">
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "3ziaksfytc");
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1849069-9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-1849069-9');
+        </script>
+
+        <!-- Structured Data for Google Search -->
+        <script type="application/ld+json">
+            {
+                "@@context": "https://schema.org",
+                "@@type": "Event",
+                "name": ".NET Conf 2020 Taiwan",
+                "startDate": "2020-12-18T09:00+08:00",
+                "endDate": "2020-12-20T18:00+08:00",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": {
+                    "@@type": "Place",
+                    "name": "臺北文創大樓 / 臺灣大學社會科學院",
+                    "address": {
+                        "@@type": "PostalAddress",
+                        "streetAddress": "臺北市信義區菸廠路 88 號 6 樓 / 臺北市大安區羅斯福路四段 1 號",
+                        "addressCountry": "Taiwan"
+                    }
+                },
+                "image": [
+                    "https://dotnetconf2020.study4.tw/img/banner/banner-site-preview.png"
+                ],
+                "description": ".NET Conf 2020 Taiwan - .NET CONF 這一年一次的世界級盛會台灣不會缺席！由台灣 Microsoft、STUDY4 和 Build School 共同組織的台灣 .NET CONF 開發人員活動，快來慶祝並了解新版本帶來的優秀開發體驗吧！",
+                "offers": {
+                    "@@type": "Offer",
+                    "url": "https://study4-tw.kktix.cc/events/dotnetconf2020",
+                    "price": "1800",
+                    "priceCurrency": "NTD",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2020-11-14T00:00"
+                },
+                "performer": {
+                    "@@type": "PerformingGroup",
+                    "name": "Microsoft、STUDY4、Build School"
+                },
+                "organizer": {
+                    "@@type": "Organization",
+                    "name": "Microsoft、STUDY4、Build School",
+                    "url": "http://study4.tw/"
+                }
+            }
+        </script>
+    </environment>
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <!-- Blazor -->
+    <script src="_framework/blazor.server.js"></script>
+    <script>
+        // Wait until a 'reload' button appears
+        new MutationObserver((mutations, observer) => {
+            if (document.querySelector('#components-reconnect-modal h5 a')) {
+                // Now every 10 seconds, see if the server appears to be back, and if so, reload
+                async function attemptReload() {
+                    await fetch(''); // Check the server really is back
+                    location.reload();
+                }
+                observer.disconnect();
+                attemptReload();
+                setInterval(attemptReload, 10000);
+            }
+        }).observe(document.body, { childList: true, subtree: true });
+    </script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

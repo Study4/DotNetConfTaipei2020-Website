@@ -1,0 +1,6 @@
+﻿::deep .footnote {
+    color: gray !important;
+}
+    ::deep .footnote a:hover {
+        color: mediumpurple;
+    }

@@ -1,0 +1,47 @@
+﻿<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img src="./img/dotnetconf-logo.svg" height="108" alt="">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <nav class="mainmenu mobile-menu">
+                <ul>
+                    @foreach (var menu in mainmenu)
+                    {
+                        <li><NavLink href="@menu.Href" Match="NavLinkMatch.All">@menu.Title</NavLink></li>
+                    }
+                </ul>
+            </nav>
+            <QuickButton></QuickButton>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>
+<!-- Header Section End -->
+
+@code {
+    private List<MainMenu> mainmenu;
+
+    protected override async Task OnInitializedAsync()
+    {
+        mainmenu = new List<MainMenu> {
+            new MainMenu { Title = "首頁", Href = "" },
+            new MainMenu { Title = "議程", Href = "Session" },
+            new MainMenu { Title = "講師", Href = "Speaker" },
+            new MainMenu { Title = "主辦單位", Href = "Organizer" },
+            new MainMenu { Title = "贊助廠商", Href = "Sponsor" },
+            new MainMenu { Title = "行為守則", Href = "Code-Of-Conduct" },
+            new MainMenu { Title = "反騷擾守則", Href = "Anti-Harassment-Policy" },
+            new MainMenu { Title = "防疫守則", Href = "COVID-19" },
+        };
+    }
+
+    protected class MainMenu
+    {
+        public string Title { get; set; }
+        public string Href { get; set; }
+    }
+}

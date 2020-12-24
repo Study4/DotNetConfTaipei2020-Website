@@ -1,0 +1,33 @@
+﻿@inject IJSRuntime JSRuntime
+
+<!-- Counter Section Begin -->
+<section class="counter-section bg-gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="counter-text">
+                    <span>.NET Conf 2020</span>
+                    <h3>距離活動倒數</h3>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="cd-timer" id="countdown">
+                    <!--
+                    <div class="cd-item"><span>0</span><p>Days</p></div>
+                    <div class="cd-item"><span>0</span><p>Hours</p></div>
+                    <div class="cd-item"><span>0</span><p>Minutes</p></div>
+                    <div class="cd-item"><span>0</span><p>Seconds</p></div>
+                     -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Counter Section End -->
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("countDown");
+    }
+}

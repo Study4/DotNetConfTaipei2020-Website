@@ -1,0 +1,61 @@
+﻿@page "/Session"
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>議程</h2>
+                    <h4>Session</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Schedule Table Section Begin -->
+<section class="schedule-table-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="schedule-table-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" @onclick="@(_ => ChangeTab("1218"))">
+                            <a class="nav-link @(tabDate == "1218" ? "active" : "")">12/18 Enterprise Day</a>
+                        </li>
+                        <li class="nav-item" @onclick="@(_ => ChangeTab("1219"))">
+                            <a class="nav-link @(tabDate == "1219" ? "active" : "")">12/19 社群技術議程</a>
+                        </li>
+                        <li class="nav-item" @onclick="@(_ => ChangeTab("1220"))">
+                            <a class="nav-link @(tabDate == "1220" ? "active" : "")">12/20 社群技術議程</a>
+                        </li>
+                    </ul><!-- Tab panes -->
+                    <div class="tab-content">
+                        @if (tabDate.Equals("all") || tabDate.Equals("1218"))
+                        {
+                            <S1218></S1218>
+                        }
+                        @if (tabDate.Equals("all") || tabDate.Equals("1219"))
+                        {
+                            <S1219></S1219>
+                        }
+                        @if (tabDate.Equals("all") || tabDate.Equals("1220"))
+                        {
+                            <S1220></S1220>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Schedule Table Section End -->
+
+@code {
+    private string tabDate = "all";
+
+    private void ChangeTab(string date)
+    {
+        tabDate = date == tabDate ? "all" : date;
+    }
+}

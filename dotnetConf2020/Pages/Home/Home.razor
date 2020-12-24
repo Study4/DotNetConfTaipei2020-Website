@@ -1,0 +1,39 @@
+﻿@page "/"
+@page "/Home"
+@inject IJSRuntime JSRuntime
+<!-- Hero Section Begin -->
+<section class="hero-section" style="background-image: url('./img/hero.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="hero-text">
+                    <p><span>2020/12/18 Enterprise Day (Hands-on-Lab)</span></p>
+                    <p><span>2020/12/19 - 20 社群技術議程</span></p>
+                    <h2>探索 .NET 新世界</h2>
+                    <p><span>.NET Conf 這一年一次的世界級盛會台灣不會缺席！由台灣 Microsoft、STUDY4 和 Build School 共同組織的台灣 .NET Conf 開發人員活動，快來慶祝並了解新版本帶來的優秀開發體驗吧！</span></p>
+                    <br />
+                    <p>
+                        <QuickButton></QuickButton>
+                    </p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<CounterSection></CounterSection>
+<AboutSection></AboutSection>
+<SpeakerSection></SpeakerSection>
+@*<ScheduleSection></ScheduleSection>*@
+<PricingSection></PricingSection>
+<ContactSection></ContactSection>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("navigation");
+        await JSRuntime.InvokeVoidAsync("partnerSlider");
+    }
+}

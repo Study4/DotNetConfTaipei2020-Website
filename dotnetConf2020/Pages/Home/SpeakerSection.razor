@@ -1,0 +1,45 @@
+﻿@using dotnetConf2020.Services
+@using dotnetConf2020.Extensions;
+@inject SpeakerService SpeakerService
+<!-- Team Member Section Begin -->
+<section class="team-member-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <NavLink href="Speaker" Match="NavLinkMatch.All">
+                        <h2>活動講師群</h2>
+                    </NavLink>
+                    <p>本次活動邀請到國內多位重量級大師及專業講師，超過 30 位講師來分享他們的專業知識和經驗</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach (var speaker in speakers)
+    {
+        @if (speaker.IsShow)
+        {
+            <div class="member-item set-bg" style="background-image: url('@speaker.PictureUrl')">
+                <div class="mi-social">
+                    <div class="mi-social-inner bg-gradient">
+                        <a href="./Speaker#@speaker.Id.Replace(" ", "")"><i class="fa fa-address-card-o"></i></a>
+                    </div>
+                </div>
+                <div class="mi-text">
+                    <h5>@speaker.Name</h5>
+                    <span>@speaker.JobTitle</span>
+                </div>
+            </div>
+        }
+    }
+</section>
+<!-- Team Member Section End -->
+
+@code {
+    private IEnumerable<SpeakerModel> speakers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        speakers = SpeakerService.GetSpeakers().Where(p => p.IsShow).Take(20).ToList().Shuffle();
+    }
+}

@@ -1,0 +1,14 @@
+﻿<span>
+    @if (new DateTime(2020, 12, 12).CompareTo(DateTime.Now) > 0)
+    {
+        <a href="https://study4-tw.kktix.cc/events/dotnetconf2020" target="_blank" class="primary-btn top-btn"><i class="fa fa-ticket"></i> 購票</a>
+    }
+    else
+    {
+        <a href="https://hackmd.io/@@Study4/dotnetconf-2020" target="_blank" class="primary-btn top-btn"><i class="fa fa-pencil-square-o"></i> 大會共筆</a>
+    }
+</span>
+
+@code {
+
+}

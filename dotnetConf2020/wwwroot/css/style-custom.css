@@ -1,0 +1,198 @@
+﻿/*---------------------
+  Header
+-----------------------*/
+
+.logo {
+    float: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.nav-menu .mainmenu ul li a.active:after {
+    opacity: 1;
+}
+
+/*---------------------
+  Home About Section
+-----------------------*/
+
+.ha-text {
+    padding-top: 30px;
+}
+
+/*---------------------
+  Home Contact 
+-----------------------*/
+
+.cs-map {
+    height: auto;
+}
+
+/*---------------------
+  Schedule Section
+-----------------------*/
+.schedule-tab .nav-tabs .nav-item {
+    width: 25%;
+}
+
+/*------------------------
+  Schedule Table Section
+-------------------------*/
+
+.schedule-table-tab .schedule-table-content table tbody tr td.event-time {
+    width: 140px;
+    color: #f44949;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.schedule-table-tab .nav-tabs .nav-item {
+    border-right: 1px solid #e7e7e8;
+    width: 33%;
+    text-align: center;
+}
+
+/*------------------------
+  Speaker Table Section
+-------------------------*/
+
+.speaker-section {
+    padding-top: 0;
+}
+
+.speaker-table-tab .nav-tabs {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 3px 10px 30px rgba(74, 74, 77, 0.15);
+    box-shadow: 3px 10px 30px rgba(74, 74, 77, 0.15);
+}
+
+    .speaker-table-tab .nav-tabs .nav-item {
+        border-right: 1px solid #e7e7e8;
+        width: 33%;
+        text-align: center;
+    }
+
+        .speaker-table-tab .nav-tabs .nav-item:last-child {
+            border-right: none;
+        }
+
+        .speaker-table-tab .nav-tabs .nav-item .nav-link {
+            padding: 22px 0;
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #171822;
+        }
+
+            .speaker-table-tab .nav-tabs .nav-item .nav-link.active {
+                border-color: #e7e7e8;
+                color: #ffffff;
+            }
+
+.speaker-table-tab .speaker-table-content table {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+}
+
+    .speaker-table-tab .speaker-table-content table thead {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .speaker-table-tab .speaker-table-content table thead tr th {
+            border-right: 1px solid #e5e5e5;
+            padding: 24px 0 26px;
+        }
+
+            .speaker-table-tab .speaker-table-content table thead tr th strong {
+                font-size: 24px;
+                color: #171822;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            .speaker-table-tab .speaker-table-content table thead tr th span {
+                color: #f5523b;
+                font-size: 16px;
+                display: block;
+                font-weight: 400;
+            }
+
+    .speaker-table-tab .speaker-table-content table tbody tr {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .speaker-table-tab .speaker-table-content table tbody tr td {
+            border-right: 1px solid #e5e5e5;
+            width: 260px;
+            height: 134px;
+            padding: 37px 0 36px;
+        }
+
+            .speaker-table-tab .speaker-table-content table tbody tr td h5 {
+                color: #171822;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .speaker-table-tab .speaker-table-content table tbody tr td p {
+                color: #171822;
+                margin-bottom: 0;
+            }
+
+                .speaker-table-tab .speaker-table-content table tbody tr td p span {
+                    color: #a0a1b5;
+                }
+
+            .speaker-table-tab .speaker-table-content table tbody tr td.event-time {
+                width: 140px;
+                color: #f44949;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .speaker-table-tab .speaker-table-content table tbody tr td.break h5 {
+                margin-bottom: 0;
+            }
+
+            .speaker-table-tab .speaker-table-content table tbody tr td.hover-bg:hover {
+                background: -o-linear-gradient(330deg, #A08BE8, #321a8b);
+                background: linear-gradient(120deg, #A08BE8, #321a8b);
+            }
+
+                .speaker-table-tab .speaker-table-content table tbody tr td.hover-bg:hover h5 {
+                    color: #ffffff;
+                }
+
+                .speaker-table-tab .speaker-table-content table tbody tr td.hover-bg:hover p {
+                    color: #ffffff;
+                }
+
+                    .speaker-table-tab .speaker-table-content table tbody tr td.hover-bg:hover p span {
+                        color: #ffffff;
+                    }
+
+/*---------------------
+  Footer
+-----------------------*/
+
+.sponsor-logo {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #2f3039;
+}
+
+    .sponsor-logo .pl-table {
+        display: inline-block;
+        display: table;
+    }
+
+        .sponsor-logo .pl-table .pl-tablecell {
+            display: table-cell;
+            vertical-align: middle;
+            height: 41px;
+        }

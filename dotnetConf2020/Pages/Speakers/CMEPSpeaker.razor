@@ -1,0 +1,25 @@
+﻿@using dotnetConf2020.Services
+@inject SpeakerService SpeakerService
+<div class="tab-pane active" id="tabs-1">
+    <div class="schedule-table-content">
+        <h2>12/19 - 20 企業實戰議程</h2>
+        <h4>臺灣大學社會科學院</h4>
+        <br />
+        @foreach (var speaker in speakers)
+        {
+            @if (speaker.IsShow)
+            {
+                <ShowSpeaker Speaker="speaker"></ShowSpeaker>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private IEnumerable<SpeakerModel> speakers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        speakers = SpeakerService.GetSpeakers().Where(p => p.Tags.Contains("企業實戰"));
+    }
+}

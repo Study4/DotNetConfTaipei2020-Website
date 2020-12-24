@@ -1,0 +1,54 @@
+﻿@using dotnetConf2020.Services
+<div class="col-sm-12">
+    <div class="speaker-item" id="@Speaker.Id.Replace(" ", "")">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="si-pic">
+                    <img src="@Speaker.PictureUrl" alt="">
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="si-text">
+                    <div class="si-title">
+                        <h4>@Speaker.Name</h4>
+                        <span>@Speaker.JobTitle</span>
+                    </div>
+                    <div class="si-social">
+                        @if (!string.IsNullOrEmpty(Speaker.BlogUrl))
+                        {<a href="@Speaker.BlogUrl" target="_blank"><i class="fa fa-home"></i></a>}
+                        @if (!string.IsNullOrEmpty(Speaker.FacebookUrl))
+                        {<a href="@Speaker.FacebookUrl" target="_blank"><i class="fa fa-facebook"></i></a>}
+                        @if (!string.IsNullOrEmpty(Speaker.TwitterUrl))
+                        {<a href="@Speaker.TwitterUrl" target="_blank"><i class="fa fa-twitter"></i></a>}
+                        @if (!string.IsNullOrEmpty(Speaker.LinkedinUrl))
+                        {<a href="@Speaker.LinkedinUrl" target="_blank"><i class="fa fa-linkedin"></i></a>}
+                        @if (!string.IsNullOrEmpty(Speaker.YouTubeUrl))
+                        {<a href="@Speaker.YouTubeUrl" target="_blank"><i class="fa fa-youtube-play"></i></a>}
+                    </div>
+                    <p>@((MarkupString)Speaker.Introduction)</p>
+
+                    <div class="si-title">
+                        <h5>課程主題</h5>
+                        <strong>
+                            <span>@Speaker.Topic</span>
+                        </strong>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Speaker.TopicOutline))
+                    {
+                        <div class="si-title">
+                            <h5>課程大綱</h5>
+                            <strong>
+                                <span>@((MarkupString)Speaker.TopicOutline)</span>
+                            </strong>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public SpeakerModel Speaker { get; set; }
+}

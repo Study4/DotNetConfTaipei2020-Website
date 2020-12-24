@@ -1,0 +1,67 @@
+﻿@inject IJSRuntime JSRuntime
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="partner-logo owl-carousel">
+            @foreach (var sponsor in sponsors)
+            {
+                <a href="#" class="pl-table">
+                    <div class="pl-tablecell">
+                        <img src="@sponsor" alt="">
+                    </div>
+                </a>
+            }
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-text">
+                    <div class="ft-logo">
+                        <a href="#" class="footer-logo"><img src="./img/footer-logo.svg" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><NavLink href="Session">議程</NavLink></li>
+                        <li><NavLink href="Speaker">講師</NavLink></li>
+                        <li><NavLink href="Organizer">主辦單位</NavLink></li>
+                        <li><NavLink href="Sponsor">贊助廠商</NavLink></li>
+                        <li><NavLink href="Code-Of-Conduct">行為守則</NavLink></li>
+                        <li><NavLink href="Anti-Harassment-Policy">反騷擾守則</NavLink></li>
+                        <li><NavLink href="COVID-19">防疫守則</NavLink></li>
+                    </ul>
+                    <div class="copyright-text">
+                        <p>
+                            Copyright &copy;
+                            2020 All rights reserved | This website is made with <a href="https://docs.microsoft.com/zh-tw/aspnet/core/blazor/" target="_blank">Blazor</a> by STUDY4
+                        </p>
+                    </div>
+                    <div class="ft-social">
+                        <a href="http://study4.tw" target="_blank"><i class="fa fa-home"></i></a>
+                        <a href="https://www.facebook.com/Study4.tw/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/groups/study4tw/" target="_blank"><i class="fa fa-users"></i></a>
+                        <a href="https://www.youtube.com/channel/UCAEW7eWiDoq5syA0MnfR-SA" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("partnerSlider");
+    }
+
+    private IEnumerable<string> sponsors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        sponsors = new List<string> {
+            "./img/partner-logo/microsoft-logo.png",
+            "./img/partner-logo/study4-logo.png",
+            "./img/partner-logo/build-school-logo.png",
+            "./img/partner-logo/kktix-logo.png",
+            "./img/partner-logo/91app-logo.png",
+            "./img/partner-logo/hackmd-logo.png",
+        };
+    }
+}
